@@ -5,12 +5,17 @@ Adafruit-PlatformDetect==2.17.0
 Adafruit-PureIO==1.1.5
 asgiref==3.2.10
 board==1.0
+certifi==2020.6.20
+chardet==3.0.4
 click==7.1.2
 colorzero==1.1
 geomet==0.2.1.post1
 gpiozero==1.5.1
+idna==2.10
 pyftdi==0.51.2
 pyserial==3.4
 pytz==2020.1
 pyusb==1.1.0
+requests==2.24.0
 six==1.15.0
+urllib3==1.25.10
