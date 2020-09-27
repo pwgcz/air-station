@@ -8,8 +8,6 @@ def decimal_format(coordinate):
     degree = raw_data[0][0:-2]
     minutes = raw_data[0][-2:] + raw_data[1]
     decimal_minutes = str(float('.' + minutes) * 100 / 6).replace('.', '')
-    if decimal_minutes.startswith('0'):
-        return degree + '.' + decimal_minutes[1:]
     return degree + '.' + decimal_minutes
 
 
