@@ -7,7 +7,7 @@ def decimal_format(coordinate):
     raw_data = coordinate.split('.')
     degree = raw_data[0][0:-2]
     minutes = raw_data[0][-2:] + raw_data[1]
-    decimal_minutes = str(float(minutes) * 10 / 6).replace('.', '')
+    decimal_minutes = str(float('0.' + minutes) * 10 / 6).replace('.', '')
     return degree + '.' + decimal_minutes
 
 
