@@ -15,7 +15,7 @@ def decode(coord):
 
 def parseGPS(data):
     print(data[0:6])
-    if data[0:6] == "$GPGGA":
+    if data[0:6] == b"$GPGGA":
         print('OK')
         s = data.split(",")
 
