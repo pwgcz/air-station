@@ -29,7 +29,7 @@ def parseGPS(data):
         dir_lat = s[3]
         lon = decode(s[4])
         dir_lon = s[5]
-        print(f'Lat:{lat}({dir_lat})  Lon:{lon}({dir_lon}) time: {time}')
+        print(f'Lat:{lat}--({dir_lat})  Lon:{lon}--({dir_lon}) time: {time}')
 
 
 ser = serial.Serial(port, baudrate=9600, timeout=0.5)
