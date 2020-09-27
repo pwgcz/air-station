@@ -30,8 +30,8 @@ def parse_gps(data):
         raq_lon = s[4]
         geg_lat = decimal_format(raw_lat)
         geg_lon = decimal_format(raq_lon)
-        print(raw_lat)
-        print(raq_lon)
+        print(geg_lat)
+        print(geg_lon)
         return geg_lon, geg_lat, time
 
 
