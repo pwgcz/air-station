@@ -8,6 +8,8 @@ def decimal_format(coordinate):
     degree = raw_data[0][0:-2]
     minutes = raw_data[0][-2:] + raw_data[1]
     decimal_minutes = str(float('.' + minutes) * 100 / 6).replace('.', '')
+    if decimal_minutes.startswith('0'):
+        decimal_minutes.replace('0', 1)
     return degree + '.' + decimal_minutes
 
 
@@ -26,11 +28,11 @@ def parse_gps(data):
         time = raw_time[hour] + ":" + raw_time[minutes] + ":" + raw_time[seconds]
         raw_lat = s[2]
         raq_lon = s[4]
-        direction_lat = s[3]
-        direction_lon = s[5]
         geg_lat = decimal_format(raw_lat)
         geg_lon = decimal_format(raq_lon)
-        print(f'Lat:{geg_lat}--({direction_lat})  Lon:{direction_lon}--({geg_lon}) time:{time} ')
+        print(raw_lat)
+        print(raq_lon)
+        return geg_lon, geg_lat, time
 
 
 ser = serial.Serial(port, baudrate=9600, timeout=0.5)
