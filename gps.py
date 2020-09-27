@@ -4,11 +4,11 @@ port = "/dev/ttyS0"
 
 
 def decimal_format(coordinate):
-    decimal_coordinate = str(float(coordinate)*10)
-    split_decimal_place = decimal_coordinate.split(".")
-    degree = split_decimal_place[0]
-    fraction_degree = str(float(split_decimal_place[1])*10/6)
-    return degree + '.' + fraction_degree
+    raw_data = coordinate.split('.')
+    degree = raw_data[0][0:-2]
+    minutes = raw_data[0][-2:] + raw_data[1]
+    decimal_minutes = str(float(minutes) * 10 / 6)
+    return degree + '.' + decimal_minutes
 
 
 def parse_gps(data):
