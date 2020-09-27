@@ -35,7 +35,7 @@ def parse_gps(data):
         direction_lon = s[5]
         geg_lat = decimal_format(raw_lat)
         geg_lon = decimal_format(raq_lon)
-        print(f'Lat:{geg_lat}--({direction_lat})  Lon:{direction_lon}--({geg_lon}) time: {time}')
+        print(f'Lat:{geg_lat}--({direction_lat})  Lon:{direction_lon}--({geg_lon}) time: ')
 
 
 ser = serial.Serial(port, baudrate=9600, timeout=0.5)
