@@ -16,7 +16,9 @@ def decode(coord):
 def parseGPS(data):
     print(data[0:6])
     if data[0:6] == "$GPGGA":
-        s = data.split(", ")
+        print('OK')
+        s = data.split(",")
+
         if s[7] == '0':
             print("no satelite data available")
             return None
