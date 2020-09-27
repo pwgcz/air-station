@@ -15,10 +15,10 @@ def decode(coord):
 
 def parseGPS(data):
     print(data[0:6])
-    if data[0:6] == b"$GPGGA":
+    if data[0:6] == "$GPGGA":
         print(data)
         print(type(data))
-        # s = data.split(",")
+        s = data.split(",")
 
         if s[7] == '0':
             print("no satelite data available")
@@ -34,4 +34,4 @@ def parseGPS(data):
 ser = serial.Serial(port, baudrate=9600, timeout=0.5)
 while True:
     data = ser.readline()
-    parseGPS(data)
+    parseGPS(str(data))
