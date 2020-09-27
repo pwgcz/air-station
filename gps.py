@@ -4,16 +4,15 @@ port = "/dev/ttyS0"
 
 
 def decimal_format(coordinate):
-    print(coordinate)
     v = coordinate.split(".")
-    print(v)
     head = v[0]
-    tail = v[1]
+    second = v[1]
     deg = head[0:-2]
     minute = head[-2:]
-    print(head, tail, deg, minute)
-
-    return deg + '.' + minute + " minute" + "." + tail
+    decimal_minutes = 10 * float(minute + '.' + second) / 6
+    decimal_coordinate = deg + str(decimal_minutes)
+    print(decimal_coordinate)
+    return deg + '.' + minute + " minute" + "."
 
 
 def parse_gps(data):
@@ -35,7 +34,7 @@ def parse_gps(data):
         direction_lon = s[5]
         geg_lat = decimal_format(raw_lat)
         geg_lon = decimal_format(raq_lon)
-        print(f'Lat:{geg_lat}--({direction_lat})  Lon:{direction_lon}--({geg_lon}) time: ')
+        print(f'Lat:{geg_lat}--({direction_lat})  Lon:{direction_lon}--({geg_lon}) time:{time} ')
 
 
 ser = serial.Serial(port, baudrate=9600, timeout=0.5)
