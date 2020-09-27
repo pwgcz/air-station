@@ -8,9 +8,9 @@ def decode(coord):
     head = v[0]
     tail = v[1]
     deg = head[0:-2]
-    minim = head[-2:]
+    minute = head[-2:]
 
-    return deg + minim + "." + tail
+    return deg + ' deg' + minute + " minute" + "." + tail
 
 
 def parseGPS(data):
