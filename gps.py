@@ -13,7 +13,7 @@ def decimal_format(coordinate):
     return degree + '.' + decimal_minutes
 
 
-def parse_gps(serial_data: bytes) -> any:
+def parse_gps(serial_data: bytes):
     decoded_data = serial_data.decode()
     if decoded_data[0:6] == "$GPGGA":
         s = decoded_data.split(",")
