@@ -3,10 +3,6 @@
 _Application run on raspberry PI Zero that inform about localization and 
 air pollution, device is compatible with clean-air project available on this repository_
 
-### Used technologies
-* Django 3.1.1
-* Django Rest Framework 3.11.1
-* Casandra
 
 ## Hardware
 | Name  | Responsibility |

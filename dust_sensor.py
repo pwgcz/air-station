@@ -7,7 +7,7 @@ from gpiozero import LED
 
 
 def measure():
-    led =LED('GPIO16')
+    led = LED('GPIO16')
     led.on()
     i2c = busio.I2C(board.SCL, board.SDA)
     ads = ADS.ADS1115(i2c)
@@ -18,6 +18,5 @@ def measure():
     raw_data = chan0.voltage
     led.on()
 
-    data = raw_data*500
+    data = raw_data * 500
     return f'{"%.2f" % data} ug/m3'
-
