@@ -15,8 +15,9 @@ def decode(coord):
 
 def parseGPS(data):
     print(data[0:6])
+    data.decode()
     if data[0:6] == "$GPGGA":
-        print(data)
+        print(str(data))
         print(type(data))
         s = data.split(",")
 
@@ -34,4 +35,4 @@ def parseGPS(data):
 ser = serial.Serial(port, baudrate=9600, timeout=0.5)
 while True:
     data = ser.readline()
-    parseGPS(str(data))
+    parseGPS(data)
