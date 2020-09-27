@@ -13,8 +13,8 @@ def decimal_format(coordinate):
     return degree + '.' + decimal_minutes
 
 
-def parse_gps(data):
-    decoded_data = data.decode()
+def parse_gps(serial_data: bytes) -> any:
+    decoded_data = serial_data.decode()
     if decoded_data[0:6] == "$GPGGA":
         s = decoded_data.split(",")
 
@@ -30,12 +30,9 @@ def parse_gps(data):
         raq_lon = s[4]
         geg_lat = decimal_format(raw_lat)
         geg_lon = decimal_format(raq_lon)
-        print(geg_lat)
-        print(geg_lon)
         return geg_lon, geg_lat, time
 
 
 ser = serial.Serial(port, baudrate=9600, timeout=0.5)
-while True:
-    data = ser.readline()
-    parse_gps(data)
+serial_response = ser.readline()
+parse_gps(serial_response)
