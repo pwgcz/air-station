@@ -14,6 +14,7 @@ def main():
         current_time = time.strftime("%H:%M:%S", t)
         measure_data = dust_sensor.average_measurement()
         # geg_lon, geg_lan = gps.location()
+        print('okok')
         payload = {
             "stationName": "Private Station",
             "values": {

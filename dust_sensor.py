@@ -34,6 +34,7 @@ def measurement():
 
 
 def average_measurement():
+    print('miara')
     measure_list = []
     for i in range(10):
         measure_list.append(measurement())
