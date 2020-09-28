@@ -18,15 +18,11 @@ def main():
         # geg_lon, geg_lan = gps.location()
 
         payload = {
-            "stationName": "Private Station",
-            "values": {
-                "params": "PM2.5",
-                "value": measure_data,
-            },
+            "stationName": "Private Station"
+
             # "gegrLat": geg_lon,
             # "gegrLon": geg_lon,
         }
-        print(json.dumps(payload))
         r = requests.post(url, data=json.dumps(payload), headers=headers)
         time.sleep(3)
 
