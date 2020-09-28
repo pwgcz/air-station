@@ -7,7 +7,7 @@ from dust_sensor import average_measurement, turn_off_led
 def main():
     turn_off_led()
 
-    url = 'http://localhost:8000/private-station'
+    url = 'http://127.0.0.1:5000/private-station'
     headers = {'content-type': 'application/json'}
     measure_data = average_measurement()
     print(measure_data)
