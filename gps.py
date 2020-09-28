@@ -25,15 +25,15 @@ def parse_gps(serial_data: bytes):
         raq_lon = s[4]
         geg_lat = decimal_format(raw_lat)
         geg_lon = decimal_format(raq_lon)
+        print(geg_lon, geg_lat)
         return geg_lon, geg_lat
 
 
 def get_location():
     ser = serial.Serial(port, baudrate=9600, timeout=0.5)
     serial_response = ser.readline()
-    return parse_gps(serial_response)
+    parse_gps(serial_response)
 
 
 if __name__ == '__main__':
-    a = get_location()
-    print(a)
+    get_location()
