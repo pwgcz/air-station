@@ -1,7 +1,7 @@
+import requests
 import json
 import time
 from dust_sensor import average_measurement, turn_off_led
-
 
 
 def main():
@@ -27,7 +27,7 @@ def main():
             # "gegrLon": geg_lon,
         }
         print(json.dumps(payload))
-        # r = requests.post(url, data=json.dumps(payload), headers=headers)
+        r = requests.post(url, data=json.dumps(payload), headers=headers)
         time.sleep(3)
 
 
