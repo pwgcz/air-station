@@ -25,7 +25,7 @@ def measurement():
     chan0 = AnalogIn(ads, ADS.P0)
 
     led.off()
-    time.slleep(.00028)
+    time.sleep(.00028)
     raw_data = chan0.voltage
     led.on()
 
