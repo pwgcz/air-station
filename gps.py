@@ -19,7 +19,7 @@ def parse_gps(data):
         s = decoded_data.split(",")
 
         if s[7] == '0':
-            # no satellite data not available"
+            # satellite data not available
             return None
         raw_lat = s[2]
         raq_lon = s[4]
@@ -37,3 +37,6 @@ def location():
         data = ser.readline()
         output = parse_gps(data)
     return output
+
+
+location()
