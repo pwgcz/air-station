@@ -21,6 +21,7 @@ def parse_gps(data):
         if s[7] == '0':
             print("no satelite data available")
             return None
+        print(s)
         raw_time = s[1]
         hour = slice(0, 2)
         minutes = slice(2, 4)
