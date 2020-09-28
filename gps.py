@@ -19,24 +19,24 @@ def parse_gps(data):
         s = decoded_data.split(",")
 
         if s[7] == '0':
-            # satellite data not available
+            print("no satelite data available")
             return None
+        raw_time = s[1]
+        hour = slice(0, 2)
+        minutes = slice(2, 4)
+        seconds = slice(4, 6)
+        time = raw_time[hour] + ":" + raw_time[minutes] + ":" + raw_time[seconds]
         raw_lat = s[2]
         raq_lon = s[4]
         geg_lat = decimal_format(raw_lat)
         geg_lon = decimal_format(raq_lon)
         print(geg_lat)
         print(geg_lon)
-        return geg_lon, geg_lat
+        return geg_lon, geg_lat, time
 
 
-def location():
-    ser = serial.Serial(port, baudrate=9600, timeout=0.5)
-    output = None
-    while not output:
-        data = ser.readline()
-        output = parse_gps(data)
-    return output
-
-
-location()
+ser = serial.Serial(port, baudrate=9600, timeout=0.5)
+output = None
+while not output:
+    data = ser.readline()
+    output = parse_gps(data)
