@@ -13,7 +13,7 @@ def main():
         t = time.localtime()
         current_time = time.strftime("%H:%M:%S", t)
         measure_data = dust_sensor.average_measurement()
-        geg_lon, geg_lan = gps.get_location()
+        geg_lon, geg_lan = gps.location()
         payload = {
             "stationName": "Private Station",
             "values": {
