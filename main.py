@@ -1,13 +1,14 @@
-import requests
+
 import json
 import dust_sensor
 import gps
 
 
 def main():
+    print('111--11')
     dust_sensor.turn_off_led()
-    url = 'http://localhost:8000/private-station'
-    headers = {'content-type': 'application/json'}
+    # url = 'http://localhost:8000/private-station'
+    # headers = {'content-type': 'application/json'}
     measure_data = dust_sensor.average_measurement()
     print(measure_data)
     while True:
