@@ -9,6 +9,7 @@ def main():
     dust_sensor.turn_off_led()
     url = 'http://localhost:8000/private-station'
     headers = {'content-type': 'application/json'}
+    print('za')
     while True:
         t = time.localtime()
         current_time = time.strftime("%H:%M:%S", t)
@@ -28,7 +29,6 @@ def main():
         print(payload)
         print(json.dumps(payload))
         # r = requests.post(url, data=json.dumps(payload), headers=headers)
-        time.sleep(10)
 
 
 if __name__ == '__main__':
