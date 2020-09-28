@@ -36,7 +36,8 @@ def parse_gps(data):
 
 
 ser = serial.Serial(port, baudrate=9600, timeout=0.5)
-
-data = ser.readline()
-parse_gps(data)
+data = None
+while not data:
+    data = ser.readline()
+    parse_gps(data)
 
