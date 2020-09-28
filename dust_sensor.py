@@ -41,3 +41,6 @@ def average_measurement():
 
     average = sum(measure_list) / len(measure_list)
     return f'{"%.4f" % average} ug/m3'
+
+
+average_measurement()
