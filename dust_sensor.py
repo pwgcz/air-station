@@ -34,12 +34,12 @@ def measurement():
 
 
 def average_measurement():
-    print('miara')
     measure_list = []
     for i in range(10):
         measure_list.append(measurement())
 
     average = sum(measure_list) / len(measure_list)
+    print(average)
     return f'{"%.4f" % average} ug/m3'
 
 
