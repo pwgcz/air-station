@@ -39,7 +39,7 @@ def average_measurement():
         measure_list.append(measurement())
 
     average = sum(measure_list) / len(measure_list)
-    print(average)
+    print(f'{"%.4f" % average} ug/m3')
     return f'{"%.4f" % average} ug/m3'
 
 
