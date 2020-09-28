@@ -43,4 +43,5 @@ def average_measurement():
     return f'{"%.4f" % average} ug/m3'
 
 
+turn_off_led()
 average_measurement()
