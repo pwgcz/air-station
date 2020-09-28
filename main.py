@@ -28,7 +28,7 @@ def main():
         }
         print(json.dumps(payload))
         # r = requests.post(url, data=json.dumps(payload), headers=headers)
-        time.sleep(3600)
+        time.sleep(3)
 
 
 if __name__ == "__main__":
