@@ -31,5 +31,4 @@ def main():
         # r = requests.post(url, data=json.dumps(payload), headers=headers)
 
 
-if __name__ == '__main__':
-    main()
+main()
