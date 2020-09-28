@@ -29,9 +29,7 @@ def parse_gps(serial_data: bytes):
         return geg_lon, geg_lat
 
 
-if __name__ == '__main__':
-
-    ser = serial.Serial(port, baudrate=9600, timeout=0.5)
-    serial_response = ser.readline()
-    parse_gps(serial_response)
+ser = serial.Serial(port, baudrate=9600, timeout=0.5)
+serial_response = ser.readline()
+parse_gps(serial_response)
 
